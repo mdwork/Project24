@@ -24,7 +24,32 @@ $(document).ready(function(){
             $('#bg-popup').fadeOut(300);
             $('#box_1').fadeOut(300);
         });
+
+        $('.btn-search').on('click', function(e){
+            e.preventDefault();
+
+            var nameUser = $('#name-user'),
+                tellUser = $('#tell-user'),
+                nameUserVal = $('#name-user').val(),
+                tellUserVal = $('#tell-user').val();
+
+            function checkField($field){
+                $field.on('keydown', function(){
+                    $field.css('border-color','#7b7b7b');
+                });
+            }
+
+            if(nameUserVal == '' || nameUserVal == ' ') {
+                nameUser.css('border-color','#f00');
+
+                checkField(nameUser);
+
+                if(tellUserVal == '' || tellUserVal == ' ') {
+                    tellUser.css('border-color','#f00');
+
+                    checkField(tellUser);
+                }
+            }
+        });
     });
-
-
 });
