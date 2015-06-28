@@ -18,8 +18,8 @@
             </span>
 
             <div class="contact-box">
-                <a class="tell" href="tel:+388007556798"><span>8 800</span> 755 67 98</a>
-                <button class="btn-call-back">Заказать обратный звонок</button>
+                <a class="tell" href="tel:+788007556798"><span>8 800</span> 755 67 98</a>
+                <button class="popup-call-back-js btn-call-back">Заказать обратный звонок</button>
             </div>
         </header>
 
@@ -701,25 +701,14 @@
 
             <div class="contact-box">
                 <a class="tell" href="tel:+788007556798"><span>8 800</span> 755 67 98</a>
-                <button class="btn-call-back">Заказать обратный звонок</button>
+                <button class="popup-call-back-js btn-call-back">Заказать обратный звонок</button>
             </div>
         </footer>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
-    <script src="js/chosen.jquery.min.js" type="text/javascript"></script>
-    <script src="js/prism.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript">
-        var config = {
-            '.chosen-select'           : {},
-            '.chosen-select-deselect'  : {allow_single_deselect:true},
-            '.chosen-select-no-single' : {disable_search_threshold:10},
-            '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
-            '.chosen-select-width'     : {width:"95%"}
-        }
-        for (var selector in config) {
-            $(selector).chosen(config[selector]);
-        }
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+    <script src="js/chosen.jquery.min.js"></script>
+    <script src="js/prism.js"></script>
+    <script src="js/commonJs.js"></script>
 </body>
 </html>
