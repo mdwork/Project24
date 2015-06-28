@@ -30,8 +30,8 @@ $(document).ready(function(){
 
             var nameUser = $('#name-user'),
                 tellUser = $('#tell-user'),
-                nameUserVal = $('#name-user').val(),
-                tellUserVal = $('#tell-user').val();
+                nameUserVal = nameUser.val(),
+                tellUserVal = tellUser.val();
 
             function checkField($field){
                 $field.on('keydown', function(){
