@@ -25,4 +25,6 @@ $(document).ready(function(){
             $('#box_1').fadeOut(300);
         });
     });
+
+
 });
