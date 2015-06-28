@@ -23,9 +23,16 @@ $(document).ready(function(){
         $('#bg-popup, .close-btn-popup').click(function () {
             $('#bg-popup').fadeOut(300);
             $('#box_1').fadeOut(300);
+
+            setTimeout(function(){
+                $('.wrap-form').show();
+                $('.success-message').hide();
+            }, 300);
         });
 
-        $('.btn-search').on('click', function(e){
+        var flag = false;
+
+        $('#send-form').on('click', function(e){
             e.preventDefault();
 
             var nameUser = $('#name-user'),
@@ -36,19 +43,48 @@ $(document).ready(function(){
             function checkField($field){
                 $field.on('keydown', function(){
                     $field.css('border-color','#7b7b7b');
+
+                    flag = true;
                 });
             }
 
             if(nameUserVal == '' || nameUserVal == ' ') {
                 nameUser.css('border-color','#f00');
+                flag = false;
 
                 checkField(nameUser);
+            }
+            else {
+                flag = true;
+            }
+            if(tellUserVal == '' || tellUserVal == ' ') {
+                tellUser.css('border-color','#f00');
+                flag = false;
 
-                if(tellUserVal == '' || tellUserVal == ' ') {
-                    tellUser.css('border-color','#f00');
+                checkField(tellUser);
+            }
+            else {
+                flag = true;
+            }
 
-                    checkField(tellUser);
-                }
+            if(flag) {
+                $.ajax({
+                    url: 'form.php',
+                    type: 'POST',
+                    data: { nameUser: nameUserVal, tellUser: tellUserVal },
+                    success: function(data){
+                        if(data) {
+                            $('#box_1').hide();
+                            $('.wrap-form').hide();
+
+                            $('#box_1').fadeIn(500);
+                            $('.success-message').show();
+
+                            nameUserVal = nameUser.val('');
+                            tellUserVal = tellUser.val('');
+                        }
+                    }
+                });
             }
         });
     });

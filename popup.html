@@ -4,16 +4,18 @@
     <div id="box_1" class="mymagicoverbox_fenetre">
         <div class="close-btn-popup">X</div>
 
-        <form action="" method="post" class="wrap-form">
+        <form action="form.php" method="post" class="wrap-form">
             <span class="text">
                 <span>Укажите ваш номер телефона и наш менеджер</span>
                 <b>свяжется с вами</b>
             </span>
 
-            <input id="name-user" name="name-user" placeholder="Как вас зовут ?">
-            <input id="tell-user" name="tell-user" placeholder="Укажите ваш номер телефона">
+            <input id="name-user" name="nameUser" placeholder="Как вас зовут ?">
+            <input id="tell-user" name="tellUser" placeholder="Укажите ваш номер телефона">
 
-            <button type="submit" class="btn-search">ОТПРАВИТЬ</button>
+            <button id='send-form' type="submit" class="btn-search">ОТПРАВИТЬ</button>
         </form>
+
+        <span class="success-message">Ваше собщение отправлено</span>
     </div>
 </div>
